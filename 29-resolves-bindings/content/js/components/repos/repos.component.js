@@ -14,7 +14,7 @@ var repos = {
 				</li>
 			</ul>
 		</div>
-	`
+    `
 };
 
 angular
