@@ -1,9 +1,9 @@
 var repos = {
-	bindings: {
-		list: '<'
-	},
-	template: `
-		<div class="repos"
+    bindings: {
+        list: '<'
+    },
+    template: `
+		<div class="repos">
 			My Repos:
 			<ul>
 				<li ng-repeat="repo in $ctrl.list">
@@ -14,21 +14,21 @@ var repos = {
 				</li>
 			</ul>
 		</div>
-	`
+    `
 };
 
 angular
-	.module('repos')
-	.component('repos', repos)
-	.config(function ($stateProvider) {
-		$stateProvider
-			.state('repos', {
-				url: '/repos',
-				component: 'repos',
-				resolve: {
-					list: function (ReposService) {
-						return ReposService.getRepos();
-					}
-				}
-			});
-	});
+    .module('repos')
+    .component('repos', repos)
+    .config(function ($stateProvider) {
+        $stateProvider
+            .state('repos', {
+                url: '/repos',
+                component: 'repos',
+                resolve: {
+                    list: function (ReposService) {
+                        return ReposService.getRepos();
+                    }
+                }
+            });
+    });
